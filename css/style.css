@@ -5,11 +5,15 @@
     font-family: 'Amita', cursive;
 }
 
-h2{
-    font-family: 'Amita', cursive;
-}
+
 
 #colorHeader{
     background-color: #260F01;
 }
 
+@media all and (max-width: 767px){
+    .bannerNotasenPapel{
+        height: 250px;
+        object-fit: cover;
+    }
+}
