@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@700&display=swap');
+
+
+#NavbarTitle{
+    font-family: 'Amita', cursive;
+}
+
+h2{
+    font-family: 'Amita', cursive;
+}
+
+#colorHeader{
+    background-color: #260F01;
+}
+
