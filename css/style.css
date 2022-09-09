@@ -30,3 +30,43 @@
     color: white;
     font-weight: bold;
 }
+
+/* ACERCA DE NOSOTROS */
+.About-us {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .About-us2 {
+    width: 100%;
+    text-align: center;
+    background-color: #ccc;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+
+  #acercaH1{
+    color: black;
+    font-size: 35px;
+  }
+  #team {
+    border-radius: 50%;
+  }
+  
+  p {
+    font-size: 18px;
+  } 
+ 
+
+
+  /* FIN DE ACERCA DE NOSOTROS */
+  
+
+   /* LOGIN */
+
+
+    /* FIN DE LOGIN */
+  
