@@ -32,11 +32,19 @@
 }
 
 /* ACERCA DE NOSOTROS */
+
+.acercadeNosBody{
+    background-color : grey;
+    background-image : url('../img/pexels-ylanite-koppens-934067.jpg');
+    background-size: 150%;
+}
+
 .About-us {
     width: 100%;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
+    background-color : #f2dcc2ab;
   }
 
   .About-us2{
@@ -46,6 +54,7 @@
   #acercaH1{
     color: black;
     font-size: 35px;
+    background-color : #f2dcc2ab;
   }
   #team {
     border-radius: 50%;
