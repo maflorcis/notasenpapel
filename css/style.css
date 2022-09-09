@@ -8,7 +8,6 @@
 }
 
 
-
 #colorHeader{
     background-color: #260F01;
 }
@@ -19,6 +18,19 @@
         object-fit: cover;
     }
 }
+
+/* FIN NAVBAR */
+
+
+/* ADMINISTRADOR*/
+
+
+.Adm-title{
+    background-color : #f2dcc2ab;
+}
+
+
+/* FIN ADM */
 
 /* DATOS PARA INDEX - CARRITO */
 
@@ -85,5 +97,24 @@
     }
     
 
+
+
     /* FIN DE LOGIN */
+
+
+
+       /* REGISTRO */
+   .bodyRegistro{
+    background-color : grey;
+    background-image : url('../img/pexels-ylanite-koppens-934067.jpg');
+    background-size: 150%;
+}
+
+ 
+    .titleRegistro{
+        background-color : #f2dcc2ab;
+    }
+    
+
+    /* FIN DE REGISTRO */
   
