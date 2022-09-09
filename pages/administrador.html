@@ -69,12 +69,112 @@
   
 
 
-
-<!-- SLIDER -->
-
+<main>
 
 
-<main class="container my-5">
+    <!-- LOGOUT -->
+<div class="container">
+    <h1 class="text-center">Welcome to the Dashboard</h1>
+    <p class="text-center"><a href="/Index.html" class="logout">Log Out</a></p>
+</div>
+
+<main>
+
+<div class="container mt-4" id="body">
+    <div class="row">
+        <div class="col-12">
+            <div class="card"> </div>
+                <div class="card-header">
+                    <h2>Agregar nuevo libro</h2> </div>
+                <div class="card-body">
+                    <form id="formulario">
+                            <div class="form-group">
+                                <label for="titulo">Título</label>
+                                <input class= "form-control" type="text"  id="titulo" placeholder="Ingresar Titulo">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="descripcion">Descripción</label>
+                                <input class= "form-control" type="text"  id="descripcion" placeholder="Ingresar Descripcion">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="precio">Precio</label>
+                                <input class= "form-control" type="number"  id="precio" placeholder="Ingresar Precio">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="categoria">Categoría</label>
+                                <select id="categoria" class="form-control">
+                                    <option value="">Selecione una categoría</option>
+                                    <option value="clásico">Clásico</option>
+                                    <option value="contemporáneo">Contemporáneo</option>
+                                    <option value="estudio">Estudio</option>
+                                </select>
+                               
+                            </div>
+
+                            <div class="form-group">
+                                <label for="imagen">Imagen</label>
+                                <input class= "form-control" type="text"  id="imagen" placeholder="Ingresar URL">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="stock">Stock</label>
+                                <input class= "form-control" type="number"  id="stock" placeholder="Ingresar Unidades en stock">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="codigo">Código</label>
+                                <input class= "form-control" type="text"  id="codigo" placeholder="Ingresar codigo">
+                            </div>
+
+
+
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+                    </form>    
+                </div>
+
+        </div>
+
+        <div class="col-12">
+            <h1>Detalle de Libros</h1>
+            <section class="table-responsive">
+            <table class="table align-middle">
+                <thead>
+                  <tr>
+                    <th scope="col">Título</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Precio</th>
+
+                    <th scope="col">Categoría</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Código</th>
+                    
+                  </tr>
+                </thead>
+                <tbody id="tbody">
+                  <tr>
+                    <td>La bella y la Bestia</td>
+                    <td>Libro de Fantasía</td>
+                    <td>100</td>
+                    
+                    <td>Clásico</td>
+                    <td>https://http2.mlstatic.com/D_NQ_NP_969316-MLA43666452343_102020-O.webp</td>
+                    <td>5</td>
+                    <td>123</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </section>
+        </div>
+
+    </div> 
+
+
+</div>
 
 
     
