@@ -83,9 +83,10 @@
 
    /* LOGIN */
    .loginBody{
-    background-color : grey;
+    
     background-image : url('../img/pexels-ylanite-koppens-934067.jpg');
     background-size: 150%;
+    
 }
 
     .loginForm{
@@ -97,7 +98,9 @@
     }
     
 
-
+ .fraseM{
+    background-color : #f2dcc2ab;
+ }
 
     /* FIN DE LOGIN */
 
@@ -108,6 +111,7 @@
     background-color : grey;
     background-image : url('../img/pexels-ylanite-koppens-934067.jpg');
     background-size: 150%;
+    
 }
 
  

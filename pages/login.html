@@ -65,29 +65,39 @@
     </nav>
   </header>
 
-    <body class="login">
-        <div class="container wraper">
-            <h2 class="text-center text-dark titleLogin mt-4">Inicia sesión como Administrador</h2>
+  <body class="login">
+    <div class="container wraper">
+        <h2 class="text-center text-dark titleLogin mt-4">Inicia sesión como Administrador</h2>
+        <br>
+        <form action="../pages/administrador.html" class="loginForm p-4 mb-2">
+            <div class="input-group">
+                <label for="username" class="label me-3">Username</label>
+                <input type="text" id="username" class="input">
+                <span class="error-message"></span>
+            </div>
             <br>
-            <form action="../pages/administrador.html" class="loginForm p-4 mb-2">
-                <div class="input-group">
-                    <label for="username" class="label me-3">Username</label>
-                    <input type="text" id="username" class="input">
-                    <span class="error-message"></span>
-                </div>
-                <br>
-                <div class="input-group">
-                    <label for="password" class="label me-3">Password</label>
-                    <input type="password" id="password" class="input">
-                    <span class="error-message"></span>
-                </div>
-                <br>
-                <button class="button btn btn-secondary mb-5" type="submit">Login</button>
-            </form>
-        </div>
+            <div class="input-group">
+                <label for="password" class="label me-3">Password</label>
+                <input type="password" id="password" class="input">
+                <span class="error-message"></span>
+            </div>
+            <br>
+            <button class="button btn btn-secondary mb-5" type="submit">Login</button>
+        </form>
+    </div>
 
-      
-     
+    <section class="container text-center fraseM"> 
+        <div>
+          <img src="../img/pngaaa.com-21538.png" class="text-center" width="30%" alt=" books">
+        </div>
+    
+        <div>
+    
+          <p class="display-5">Lo más necesario, difícil y principal en la música, es el tiempo. (W.A Mozart)</p>
+        </div>
+       
+    
+      </section>
 
 
      <footer class="bg-dark text-center text-lg-start text-white footerlogin mt-5">
