@@ -14,7 +14,7 @@ function crearColumna(LibroAgregado) {
       <div class="card-body">
         <h5 class="card-title">${LibroAgregado.titulo}</h5>
         <h6 class="card-title">${LibroAgregado.precio}</h6>
-        <button class="btn btn-primary" onclick="detalleLibro('${LibroAgregado.codigo}')">ver detalle</button>
+       <button class="btn btn-primary" onclick="detalleLibro('${LibroAgregado.codigo}')">ver detalle</button>
         <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="${LibroAgregado.codigo}">Agregar Al Carrito</a>
         
       </div>
@@ -25,9 +25,9 @@ function crearColumna(LibroAgregado) {
 
 function detalleLibro(codigo) {
   console.log(codigo);
-  console.log(window.location.origin + "/Administrador.html?codigo=" + codigo);
+  console.log(window.location.origin + "/pages/detalle.html?codigo=" + codigo);
   window.location.href =
-    window.location.origin + "/Administrador.html?codigo=" + codigo;
+    window.location.origin + "/pages/detalle.html?codigo=" + codigo;
   //hay que ajustar y crear la web de detalle
 }
 
