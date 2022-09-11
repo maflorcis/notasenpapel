@@ -40,16 +40,16 @@ function detalleLibro2(codigo) {
 const carrito = document.querySelector("#carrito");
 const contenedorCarrito = document.querySelector("#lista-carrito tbody");
 const vaciarCarritoBtn = document.querySelector("#vaciar-carrito");
-const listaCursos = document.querySelector("#lista-cursos");
+const listaPartis = document.querySelector("#lista-partis");
 let articulosCarrito = [];
 
 cargarEventListeners();
 
 function cargarEventListeners() {
-  listaCursos.addEventListener("click", agregarCurso);
+  listaPartis.addEventListener("click", agregarPartitura);
 
   //Elimina cursos del carrito
-  carrito.addEventListener("click", eliminarCurso);
+  carrito.addEventListener("click", eliminarPartitura);
 
   //Muestra los cursos de local storage
 
@@ -66,60 +66,60 @@ function cargarEventListeners() {
   });
 }
 
-function agregarCurso(e) {
+function agregarPartitura (e) {
   e.preventDefault();
   if (e.target.classList.contains("agregar-carrito")) {
-    const cursoSeleccionado = e.target.parentElement.parentElement;
-    leerDatosCurso(cursoSeleccionado);
+    const partituraSeleccionado = e.target.parentElement.parentElement;
+    leerDatosPartis(partituraSeleccionado);
   }
 }
 
 //Eliminar un curso del carrito
-function eliminarCurso(e) {
-  if (e.target.classList.contains("borrar-curso")) {
-    const cursoId = e.target.getAttribute("data-id");
+function eliminarPartitura(e) {
+  if (e.target.classList.contains("borrar-parti")) {
+    const partiId = e.target.getAttribute("data-id");
 
     //Elimina del arreglo de articulosCarrito por el data-id
-    articulosCarrito = articulosCarrito.filter((curso) => curso.id !== cursoId);
+    articulosCarrito = articulosCarrito.filter((parti) => parti.id !== partiId);
     carritoHTML(); //Iterar sobre el carrito y mostrar su HTML
   }
 }
 
-function leerDatosCurso(curso) {
-  console.log(curso);
+function leerDatosPartis(parti) {
+  console.log(parti);
 
-  const infoCurso = {
-    imagen: curso.querySelector("img").src,
-    titulo: curso.querySelector("h5").textContent,
-    precio: curso.querySelector("h6").textContent,
-    id: curso.querySelector("a").getAttribute("data-id"),
+  const infoParti = {
+    imagen: parti.querySelector("img").src,
+    titulo: parti.querySelector("h5").textContent,
+    precio: parti.querySelector("h6").textContent,
+    id: parti.querySelector("a").getAttribute("data-id"),
     cantidad: 1,
   };
 
   //Revisa si un elemento ya existe en el carrito
 
-  const existe = articulosCarrito.some((curso) => curso.id === infoCurso.id);
+  const existe = articulosCarrito.some((parti) => parti.id === infoParti.id);
   if (existe) {
     //Actualizamos la cantidad
 
-    const cursos = articulosCarrito.map((curso) => {
-      if (curso.id === infoCurso.id) {
-        curso.cantidad++;
-        return curso; // retorna objeto actualizado
+    const partis = articulosCarrito.map((parti) => {
+      if (parti.id === infoParti.id) {
+        parti.cantidad++;
+        return parti; // retorna objeto actualizado
       } else {
-        return curso; // retorna objetos no duplicados
+        return parti; // retorna objetos no duplicados
       }
     });
 
-    articulosCarrito = [...cursos];
+    articulosCarrito = [...partis];
   } else {
     //Agregamos el curso al carrito
-    articulosCarrito = [...articulosCarrito, infoCurso];
+    articulosCarrito = [...articulosCarrito, infoParti];
   }
 
   
   //Agrega elementos al arreglo de carrito
-  console.log(infoCurso);
+  console.log(infoParti);
 
   //console.log(articulosCarrito);
 
@@ -135,9 +135,9 @@ function carritoHTML() {
 
   //Recorre el carrito y genera el HTML
 
-  articulosCarrito.forEach((curso) => {
-    const { imagen, titulo, precio, cantidad, id } = curso;
-    //console.log(curso);
+  articulosCarrito.forEach((parti) => {
+    const { imagen, titulo, precio, cantidad, id } = parti;
+    //console.log(parti);
     const row = document.createElement("tr");
     row.innerHTML = `
         <td>
@@ -149,7 +149,7 @@ function carritoHTML() {
 
         <td>${cantidad}</td>
 
-        <td> <a href="#" class="borrar-curso" data-id=${id}> X </a> </td>
+        <td> <a href="#" class="borrar-parti" data-id=${id}> X </a> </td>
         `;
 
     //Agrega el HTML del carrito en el tbody
@@ -174,3 +174,4 @@ function limpiarHTML() {
     contenedorCarrito.removeChild(contenedorCarrito.firstChild);
   }
 }
+
