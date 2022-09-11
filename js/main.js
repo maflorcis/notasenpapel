@@ -1,6 +1,12 @@
 //Evento para crear un nuevo libro
 document.getElementById("formulario").addEventListener("submit", crear);
 
+//EVENTOS PARA VALIDACIONES
+titulo.addEventListener('blur', ()=>{cantidadCaracteresTitulo(titulo)});
+codigo.addEventListener('blur', ()=>{cantidadCaracteresCodigo(codigo)});
+descripcion.addEventListener('blur', ()=>{cantidadCaracteresDescripcion(descripcion)});
+imagen.addEventListener('blur', ()=>{validarImagen(imagen)});
+
 //Función crear
 
 function crear(e) {
@@ -89,14 +95,20 @@ function editar(titulo) {
                   <form id="formulario">
                           <div class="form-group">
                               <label for="titulo">Título</label>
-                              <input class= "form-control" type="text"  id="newtitulo" placeholder="${libros[i].titulo}">
+                              <input class= "form-control" type="text"  id="newtitulo" placeholder="${libros[i].titulo}" required
+                              minlength="3" maxlength="40"> 
+                              <div class="valid-feedback">Correcto</div>
+                              <div class="invalid-feedback">Incorrecto</div>
                           </div>
 
                           <div class="form-group">
                               <label for="descripcion">Descripción</label>
-                              <input class= "form-control" type="text"  id="newdescripcion" placeholder="${libros[i].descripcion}">
-                          </div>
+                              <textarea name="" rows="4"  required  minlength="3"  maxlenght="300" class= "form-control" type="text"  id="newdescripcion" placeholder="${libros[i].descripcion}"></textarea>
+                              <div class="valid-feedback">Correcto</div>
+                              <div class="invalid-feedback">Incorrecto</div>
+                              </div>
 
+                          
                           <div class="form-group">
                               <label for="precio">Precio</label>
                               <input class= "form-control" type="number"  id="newprecio" placeholder="${libros[i].precio}">
@@ -115,17 +127,23 @@ function editar(titulo) {
 
                           <div class="form-group">
                               <label for="imagen">Imagen</label>
-                              <input class= "form-control" type="text"  id="newimagen" placeholder="${libros[i].imagen}">
+                              <input class= "form-control" type="text"  id="newimagen" placeholder="${libros[i].imagen}"maxlength="50"
+                              minlength="3" class="form-control" required>
+                              <div class="valid-feedback">Correcto</div>
+                              <div class="invalid-feedback">Incorrecto</div>
                           </div>
 
-                          <div class="form-group">
+                              <div class="form-group">
                               <label for="stock">Stock</label>
                               <input class= "form-control" type="number"  id="newstock" placeholder="${libros[i].stock}">
                           </div>
 
                           <div class="form-group">
                               <label for="codigo">Código</label>
-                              <input class= "form-control" type="text"  id="newcodigo" placeholder="${libros[i].codigo}">
+                              <input class= "form-control" type="number"  id="newcodigo" placeholder="${libros[i].codigo}"maxlength="50"
+                              minlength="1" class="form-control" required>
+                              <div class="valid-feedback">Correcto</div>
+                              <div class="invalid-feedback">Incorrecto</div>
                           </div>
                                 </form> 
                                 <button class="btn btn-success" onclick = "actualizar('${i}')">Actualizar</button>
@@ -220,14 +238,20 @@ function vistaPrincipal(){
                 <form id="formulario">
                         <div class="form-group">
                             <label for="titulo">Título</label>
-                            <input class= "form-control" type="text"  id="titulo" placeholder="Ingresar Titulo">
+                            <input class= "form-control" type="text"  id="titulo" placeholder="Ingresar Titulo" required
+                            minlength="3" maxlength="40"> 
+                            <div class="valid-feedback">Correcto</div>
+                            <div class="invalid-feedback">Incorrecto</div>
                         </div>
 
                         <div class="form-group">
                             <label for="descripcion">Descripción</label>
-                            <input class= "form-control" type="text"  id="descripcion" placeholder="Ingresar Descripcion">
-                        </div>
+                            <textarea name="" rows="4"  required  minlength="3"  maxlenght="300" class= "form-control" type="text"  id="descripcion" placeholder="Ingresar Descripcion"></textarea>
+                            <div class="valid-feedback">Correcto</div>
+                            <div class="invalid-feedback">Incorrecto</div>
+                            </div>
 
+                     
                         <div class="form-group">
                             <label for="precio">Precio</label>
                             <input class= "form-control" type="number"  id="precio" placeholder="Ingresar Precio">
@@ -246,9 +270,13 @@ function vistaPrincipal(){
 
                         <div class="form-group">
                             <label for="imagen">Imagen</label>
-                            <input class= "form-control" type="text"  id="imagen" placeholder="Ingresar URL">
+                            <input class= "form-control" type="text"  id="imagen" placeholder="Ingresar URL"maxlength="250"
+                            minlength="3" class="form-control" required>
+                            <div class="valid-feedback">Correcto</div>
+                            <div class="invalid-feedback">Incorrecto</div>
                         </div>
 
+                        
                         <div class="form-group">
                             <label for="stock">Stock</label>
                             <input class= "form-control" type="number"  id="stock" placeholder="Ingresar Unidades en stock">
@@ -256,7 +284,10 @@ function vistaPrincipal(){
 
                         <div class="form-group">
                             <label for="codigo">Código</label>
-                            <input class= "form-control" type="text"  id="codigo" placeholder="Ingresar codigo">
+                            <input class= "form-control" type="number"  id="codigo" placeholder="Ingresar codigo"maxlength="50"
+                            minlength="1" class="form-control" required>
+                            <div class="valid-feedback">Correcto</div>
+                            <div class="invalid-feedback">Incorrecto</div>
                         </div>
 
 
@@ -311,25 +342,65 @@ leer();
 leer();
 
 
-//Datos de Prueba
+//VALIDACIONES
 
-//EJ 1
-// Queen Really Easy Piano - 20 Queen Classics - Contemporaneo - $2500 Codigo: 123
-// https://halleonard-coverimages.s3.amazonaws.com/wl/00291022-wl.jpg
+function cantidadCaracteresTitulo(input){
+    if( input.value.trim().length >= 3 && input.value.trim().length <=40 ){
+        console.log('dato valido');
+        input.className = 'form-control is-valid';
+        return true;
+    }else{
+        console.log('dato invalido');
+        input.className = 'form-control is-invalid';
+        return false;
+    }
+}
 
-//EJ 2
-// Best of Piano Classics - 50 Famous Pieces - Contemporaneo - $1800 Codigo: 456
-//https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T2/images/I/41kbIYSBTyL._SX379_BO1,204,203,200_.jpg
 
-//EJ 3
-// Rock Classics - Partituras para aficionados - Contemporaneo - $1300 Codigo: 789
+function cantidadCaracteresCodigo(input){
+    if( input.value.trim().length >= 1 && input.value.trim().length <=50 ){
+        console.log('dato valido');
+        input.className = 'form-control is-valid';
+        return true;
+    }else{
+        console.log('dato invalido');
+        input.className = 'form-control is-invalid';
+        return false;
+    }
+}
 
-//https://imagessl5.casadellibro.com/a/l/t5/65/9788418703065.jpg
 
-//EJ 4
-// Jazz Piano Collection - 66 páginas de arreglos de Jazz - Contemporaneo - $2200 Codigo: 101112
-//https://d29ci68ykuu27r.cloudfront.net/items/18401948/cover_images/cover-medium_large_file.png
+function cantidadCaracteresDescripcion(input){
+    if( input.value.trim().length >= 3 && input.value.trim().length <=300 ){
+        console.log('dato valido');
+        input.className = 'form-control is-valid';
+        return true;
+    }else{
+        console.log('dato valido');
+        input.className = 'form-control is-invalid';
+        return false;
+    }
+}
 
-//EJ 5
-// First 50 Songs by the Beatles - Grandes éxitos facilitados - Contemporaneo - $2150 Codigo: 131415
-// https://d29ci68ykuu27r.cloudfront.net/items/20287826/cover_images/cover-medium_large_file.png
+function validarImagen(input){
+    let expReg = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;;
+    if(expReg.test(input.value)){
+        console.log('dato valido');
+        input.className = 'form-control is-valid';
+        return true;
+    }else{
+        console.log('dato valido');
+        input.className = 'form-control is-invalid';
+        return false;
+    }
+}
+
+
+
+
+
+
+
+
+
+
