@@ -170,29 +170,33 @@ function actualizar(i){
 
 
     if(libros[i].titulo == ""){
-        alert("No ha ingresado el titulo")
+        Swal.fire('No ha ingresado el titulo')
+        
     }else{
         if(libros[i].descripcion ==""){
-            alert("No ha ingresado ninguna descripción")
+            Swal.fire('No ha ingresado ninguna descripción')
+            
         }else{
             if(libros[i].precio ==""){
-                alert("No ha ingresado el precio")
+                Swal.fire('No ha ingresado el precio')
+                
         
             }else{
                 if(libros[i].categoria ==""){
-                    alert("No ha ingresado la categoria")
+                    Swal.fire('No ha ingresado la categoria')
+                    
             
                 }else{
                     if(libros[i].imagen ==""){
-                        alert("No ha ingresado el url")
+                         Swal.fire("No ha ingresado el url")
                 
                     }else{
                         if(libros[i].stock ==""){
-                            alert("No ha ingresado el stock disponible")
+                            Swal.fire("No ha ingresado el stock disponible")
 
                         }else{
                             if(libros[i].codigo ==""){
-                                alert("No ha ingresado el código")
+                                Swal.fire("No ha ingresado el código")
             
             
             
