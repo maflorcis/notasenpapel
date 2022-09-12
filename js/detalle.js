@@ -24,6 +24,7 @@ detalle.innerHTML = `
               <div class="card-body">
                 <h5 class="card-title">${partiBuscada.titulo}</h5>
                 <p class="card-text">${partiBuscada.descripcion}</p>
+                <p class="card-text">Stock: ${partiBuscada.stock}</p>
                 <p class="card-text">${partiBuscada.categoria} <span class="badge rounded-pill bg-info">$${partiBuscada.precio}</span></p>
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
