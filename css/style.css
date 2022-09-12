@@ -121,4 +121,32 @@
     
 
     /* FIN DE REGISTRO */
-  
+
+
+       /* BOTONES DEL CARRITO */
+
+     .botonC {
+            border: 1px solid #2e518b; /*anchura, estilo y color borde*/
+            padding: 5px; /*espacio alrededor texto*/
+            background-color: #2e518b; /*color botón*/
+            color: #ffffff; /*color texto*/
+            text-decoration: none; /*decoración texto*/
+            font-family: 'Helvetica', sans-serif; /*tipografía texto*/
+            border-radius: 20px; /*bordes redondos*/
+            font-size: 5 px;
+            }
+
+            .botoncb {
+                border: 1px solid #2e518b; /*anchura, estilo y color borde*/
+                padding: 5px; /*espacio alrededor texto*/
+                background-color: #2e518b; /*color botón*/
+                color: #ffffff; /*color texto*/
+                text-decoration: none; /*decoración texto*/
+                font-family: 'Helvetica', sans-serif; /*tipografía texto*/
+                border-radius: 20px; /*bordes redondos*/
+                font-size: 5 px;
+                }
+
+        
+    
+     /* FIN DE BOTON */

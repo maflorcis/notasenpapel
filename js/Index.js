@@ -14,8 +14,9 @@ function crearColumna(LibroAgregado) {
       <div class="card-body">
         <h5 class="card-title">${LibroAgregado.titulo}</h5>
         <h6 class="card-title">${LibroAgregado.precio}</h6>
-       <button class="btn btn-primary" onclick="detalleLibro('${LibroAgregado.codigo}')">ver detalle</button>
-        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="${LibroAgregado.codigo}">Agregar Al Carrito</a>
+       <button class="btn btn-primary mb-2" onclick="detalleLibro('${LibroAgregado.codigo}')">ver detalle</button>
+       <br> 
+        <a href="#" class="botonC u-full-width button-primary button input agregar-carrito" data-id="${LibroAgregado.codigo}">Agregar Al Carrito</a>
         
       </div>
     </div>
@@ -175,3 +176,42 @@ function limpiarHTML() {
   }
 }
 
+
+
+//BUSCADOR
+let productos = JSON.parse(localStorage.getItem('Libros')) || [];
+
+//const productos = [
+ // {nombre: 'Platanos', valor: 500},
+ // {nombre: 'Peras', valor: 1500},
+ // {nombre: 'Manzanas', valor: 700}]
+
+const formularioBuscador = document.querySelector('#formularioBuscador');
+const boton = document.querySelector('#boton');
+const resultado = document.querySelector('#resultado');
+
+
+const filtrar = () => {
+  //console.log(formularioBuscador.value);
+  resultado.innerHTML = '';
+  const texto = formularioBuscador.value.toLowerCase();
+  for (let producto of productos){
+    let titulo = producto.titulo.toLowerCase();
+     if(titulo.indexOf(texto) !== -1) {
+      resultado.innerHTML += `
+      <li> ${producto.titulo}  - valor: ${producto.precio} </li>      
+      `
+     }
+     if(resultado.innerHTML === ''){
+      resultado.innerHTML += `
+      <li> Producto no encontrado </li>      
+      `
+     }
+  }
+
+}
+
+boton.addEventListener('click', filtrar);
+formularioBuscador.addEventListener('keyup', filtrar);
+
+filtrar();
