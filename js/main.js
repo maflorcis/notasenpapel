@@ -7,6 +7,9 @@ codigo.addEventListener('blur', ()=>{cantidadCaracteresCodigo(codigo)});
 descripcion.addEventListener('blur', ()=>{cantidadCaracteresDescripcion(descripcion)});
 imagen.addEventListener('blur', ()=>{validarImagen(imagen)});
 
+
+
+
 //Función crear
 
 function crear(e) {
@@ -18,7 +21,6 @@ function crear(e) {
   imagen = document.getElementById("imagen").value;
   stock = document.getElementById("stock").value;
   codigo = document.getElementById("codigo").value;
-  
 
   let libro = {
     titulo,
