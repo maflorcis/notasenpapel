@@ -15,7 +15,7 @@
         <title>Notas en papel</title>
 </head>
 </head>
-<body class="loginBody">
+<body>
 <!-- NAVBAR -->
 
 <header>
@@ -48,13 +48,13 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active"  href="../Index.html">Inicio</a>
+              <a class="nav-link active" href="../Index.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="login.html">Login Administrador</a>
+              <a class="nav-link" href="login.html">Login Administrador</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="loginVisitante.html">Login/Registro Visitantes</a>
+              <a class="nav-link" aria-current="page" href="loginVisitante.html">Login/Registro Visitantes</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="acercadenosotros.html">Quiénes somos</a>
@@ -65,34 +65,71 @@
     </nav>
   </header>
 
-  <body class="login">
-    <div class="container wraper">
-        <h2 class="text-center text-dark titleLogin mt-4">Inicia sesión como Administrador</h2>
-        <br>
-        <form>
-          <h2 class="titleRegistro">Inicia Sesión</h2>
-          <input type="text" id="username">
-          <input type="password" id="password">
-          <button type="button" class="btn btn-secondary mt-3 mb-3" onclick="login()">Inicio</button>
-         <!--  <a href="/Index.html" onclick="login()">Ingresar al sitio</a>   -->
-      </form>
+<body class="bodyRegistro">
+  
+
+
+<main class="container my-5">
+
+
+<!-- Registro visitante user form -->
+<div class="container">
+    <h2>Reg. Form</h2>
+    <form action="#">
+        <div class="form-group" autocomplete="off">
+            <label for="username">Name:</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter name" name="email" minlength="3"
+            maxlength="20" required autocomplete="off">
+            <div class="valid-feedback">Correcto</div>
+            <div class="invalid-feedback">Incorrecto</div>
+          </div>
+  
+      <div class="form-group" autocomplete="off">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"
+        autocomplete="off">
+        <div class="valid-feedback">Correcto</div>
+        <div class="invalid-feedback">Incorrecto</div>
+        </div>
+  
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="psw" placeholder="Enter password" name="pwd">
+      </div>
+     
+      <button type="button" onclick="saveData()" id="save_btn" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+  
+
+
+<!-- IMAGEN-->
+
+
+<section class="container text-center fraseM"> 
+    <div>
+      <img src="../img/pngaaa.com-21538.png" class="text-center" width="30%" alt=" books">
     </div>
 
-    <section class="container text-center fraseM"> 
-        <div>
-          <img src="../img/pngaaa.com-21538.png" class="text-center" width="30%" alt=" books">
-        </div>
+    <div>
+
+      <p class="display-5">Lo más necesario, difícil y principal en la música, es el tiempo. (W.A Mozart)</p>
+    </div>
+   
+
+  </section>
+
     
-        <div>
-    
-          <p class="display-5">Lo más necesario, difícil y principal en la música, es el tiempo. (W.A Mozart)</p>
-        </div>
-       
-    
-      </section>
+     </main>
+
+      
+ 
 
 
-     <footer class="bg-dark text-center text-lg-start text-white footerlogin mt-5">
+      
+
+
+     <footer class="bg-dark text-center text-lg-start text-white">
         <!-- Grid container -->
     <div class="container p-4">
         <!--Grid row-->
@@ -144,7 +181,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
     crossorigin="anonymous"></script>
-    <script src="../js/login.js"></script>
+    <script src="../js/registroVisitante.js"></script>
     
    
 </body>

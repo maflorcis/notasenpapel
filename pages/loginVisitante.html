@@ -71,38 +71,37 @@
 
 <main class="container my-5">
 
-    <!-- login form -->
-<form>
-    <h2 class="titleRegistro">Login</h2>
-    <input type="text" id="username">
-    <input type="password" id="password">
-    <button type="button" class="btn btn-secondary mt-3 mb-3" onclick="login()">Login</button> ->
-   <!--  <a href="/Index.html" onclick="login()">Ingresar al sitio</a>   -->
-</form>
 
-
-<!-- register user form -->
-<form id="formularioRegistro">
-  <div class="form-group">
-      <label for="regUsuario">Usuario</label>
-      <input class= "form-control inputUsuario" type="text"  id="regUsuario" placeholder="Ingresar Usuario" required
-      minlength="3" maxlength="40"> 
-      <div class="valid-feedback">Correcto</div>
-      <div class="invalid-feedback">Incorrecto</div>                            
+<!-- login visitante user form -->
+<div class="container">
+    <h2>Login Form</h2>
+    <form action="#">
+  
+      <div class="form-group" autocomplete="off">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      </div autocomplete="off">
+      <div class="form-group" autocomplete="off">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="psw" placeholder="Enter password" name="pwd" autocomplete="off">
+      </div>
+     
+      <button type="button" onclick="saveData()" id="save_btn" class="btn btn-default">Submit</button>
+    </form>
   </div>
+  
+  
+  <section>
+    <h3>No tenés cuenta</h3>
+    <p class="text-center bg-light text-dark"><a href="./registroVisitante.html">Registrate</a></p>
+  
+  </section>
 
-  <div class="form-group">
-    <label for="contrasena">Ingresa una contraseña de 8 a 20 caracteres, al menos un número,una mayús, una minús</label>
-    <input class= "form-control inputContrasena" type="password"  id="contrasena" placeholder="Contraseña" required
-    minlength="8" maxlength="20"> 
-    <div class="valid-feedback">Correcto</div>
-    <div class="invalid-feedback">Incorrecto</div>                            
-</div>
 
-  <button type="submit" class="btn btn-secondary mt-3">Registro</button>
-</form> 
 
-<!-- IMAGEN ABAJO -->
+<!-- IMAGEN-->
+
+
 <section class="container text-center fraseM"> 
     <div>
       <img src="../img/pngaaa.com-21538.png" class="text-center" width="30%" alt=" books">
@@ -178,7 +177,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
     crossorigin="anonymous"></script>
-    <script src="../js/registro.js"></script>
+    <script src="../js/loginVisitante.js"></script>
     
    
 </body>

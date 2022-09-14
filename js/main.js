@@ -31,7 +31,14 @@ function crear(e) {
     imagen,
     stock,
     codigo
+
+
   };
+
+
+
+
+  //
 
   if (localStorage.getItem("Libros") === null) {
     let libros = [];
