@@ -4,12 +4,12 @@ let objPeople = [
 		password: 'contador'
 	},
 	{
-		username: 'matt',
-		password: 'password88'
+		username: 'mateo',
+		password: 'niño'
 	},
 	{
-		username: 'chris',
-		password: 'password3'
+		username: 'pablo',
+		password: 'abogado'
 	}
 ]
 
@@ -27,7 +27,7 @@ for(let i = 0; i < objPeople.length; i++) {
 			
 			break
 		} else {
-			// error if username and password don't match
+			// error if username and password no son iguales
 			Swal.fire('usuario o contraseña incorrecta')
 		}
 	}

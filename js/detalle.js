@@ -34,4 +34,3 @@ detalle.innerHTML = `
       
       `
 
-//dibujar la card

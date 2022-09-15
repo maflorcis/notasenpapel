@@ -49,10 +49,10 @@ cargarEventListeners();
 function cargarEventListeners() {
   listaPartis.addEventListener("click", agregarPartitura);
 
-  //Elimina cursos del carrito
+  //Elimina partituras del carrito
   carrito.addEventListener("click", eliminarPartitura);
 
-  //Muestra los cursos de local storage
+  //Muestra los libros de partituras de local storage
 
   document.addEventListener("DOMContentLoaded", () => {
     articulosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -67,7 +67,7 @@ function cargarEventListeners() {
   });
 }
 
-function agregarPartitura (e) {
+function agregarPartitura(e) {
   e.preventDefault();
   if (e.target.classList.contains("agregar-carrito")) {
     const partituraSeleccionado = e.target.parentElement.parentElement;
@@ -75,7 +75,7 @@ function agregarPartitura (e) {
   }
 }
 
-//Eliminar un curso del carrito
+//Eliminar una partitura del carrito
 function eliminarPartitura(e) {
   if (e.target.classList.contains("borrar-parti")) {
     const partiId = e.target.getAttribute("data-id");
@@ -114,11 +114,10 @@ function leerDatosPartis(parti) {
 
     articulosCarrito = [...partis];
   } else {
-    //Agregamos el curso al carrito
+    //Agregamos el libro al carrito
     articulosCarrito = [...articulosCarrito, infoParti];
   }
 
-  
   //Agrega elementos al arreglo de carrito
   console.log(infoParti);
 
@@ -165,7 +164,7 @@ function carritoHTML() {
 function sincronizarStorage() {
   localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
 }
-//Elimina los cursos del tbody
+//Elimina los libros del tbody
 
 function limpiarHTML() {
   //forma lenta
@@ -176,42 +175,33 @@ function limpiarHTML() {
   }
 }
 
-
-
 //BUSCADOR
-let productos = JSON.parse(localStorage.getItem('Libros')) || [];
+let productos = JSON.parse(localStorage.getItem("Libros")) || [];
 
-//const productos = [
- // {nombre: 'Platanos', valor: 500},
- // {nombre: 'Peras', valor: 1500},
- // {nombre: 'Manzanas', valor: 700}]
-
-const formularioBuscador = document.querySelector('#formularioBuscador');
-const boton = document.querySelector('#boton');
-const resultado = document.querySelector('#resultado');
-
+const formularioBuscador = document.querySelector("#formularioBuscador");
+const boton = document.querySelector("#boton");
+const resultado = document.querySelector("#resultado");
 
 const filtrar = () => {
   //console.log(formularioBuscador.value);
-  resultado.innerHTML = '';
+  resultado.innerHTML = "";
   const texto = formularioBuscador.value.toLowerCase();
-  for (let producto of productos){
+  for (let producto of productos) {
     let titulo = producto.titulo.toLowerCase();
-     if(titulo.indexOf(texto) !== -1) {
+    if (titulo.indexOf(texto) !== -1) {
       resultado.innerHTML += `
       <li> ${producto.titulo}  - valor: ${producto.precio} </li>      
-      `
-     }
-     if(resultado.innerHTML === ''){
+      `;
+    }
+    if (resultado.innerHTML === "") {
       resultado.innerHTML += `
       <li> Producto no encontrado </li>      
-      `
-     }
+      `;
+    }
   }
+};
 
-}
-
-boton.addEventListener('click', filtrar);
-formularioBuscador.addEventListener('keyup', filtrar);
+boton.addEventListener("click", filtrar);
+formularioBuscador.addEventListener("keyup", filtrar);
 
 filtrar();

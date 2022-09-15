@@ -2,13 +2,18 @@
 document.getElementById("formulario").addEventListener("submit", crear);
 
 //EVENTOS PARA VALIDACIONES
-titulo.addEventListener('blur', ()=>{cantidadCaracteresTitulo(titulo)});
-codigo.addEventListener('blur', ()=>{cantidadCaracteresCodigo(codigo)});
-descripcion.addEventListener('blur', ()=>{cantidadCaracteresDescripcion(descripcion)});
-imagen.addEventListener('blur', ()=>{validarImagen(imagen)});
-
-
-
+titulo.addEventListener("blur", () => {
+  cantidadCaracteresTitulo(titulo);
+});
+codigo.addEventListener("blur", () => {
+  cantidadCaracteresCodigo(codigo);
+});
+descripcion.addEventListener("blur", () => {
+  cantidadCaracteresDescripcion(descripcion);
+});
+imagen.addEventListener("blur", () => {
+  validarImagen(imagen);
+});
 
 //Función crear
 
@@ -30,13 +35,8 @@ function crear(e) {
     categoria,
     imagen,
     stock,
-    codigo
-
-
+    codigo,
   };
-
-
-
 
   //
 
@@ -69,7 +69,6 @@ function leer() {
     let imagen = libros[i].imagen;
     let stock = libros[i].stock;
     let codigo = libros[i].codigo;
-
 
     document.getElementById("tbody").innerHTML += `<tr>
         <td>${titulo}</td>
@@ -164,85 +163,65 @@ function editar(titulo) {
 
 //Función actualizar
 
-function actualizar(i){
-    let libros = JSON.parse(localStorage.getItem("Libros"));
-    libros[i].titulo = document.getElementById("newtitulo").value;
-    libros[i].descripcion = document.getElementById("newdescripcion").value;
-    libros[i].precio = document.getElementById("newprecio").value;
+function actualizar(i) {
+  let libros = JSON.parse(localStorage.getItem("Libros"));
+  libros[i].titulo = document.getElementById("newtitulo").value;
+  libros[i].descripcion = document.getElementById("newdescripcion").value;
+  libros[i].precio = document.getElementById("newprecio").value;
 
-    libros[i].imagen = document.getElementById("newimagen").value;
-    libros[i].categoria = document.getElementById("newcategoria").value;
-    libros[i].stock = document.getElementById("newstock").value;
-    libros[i].codigo = document.getElementById("newcodigo").value;
+  libros[i].imagen = document.getElementById("newimagen").value;
+  libros[i].categoria = document.getElementById("newcategoria").value;
+  libros[i].stock = document.getElementById("newstock").value;
+  libros[i].codigo = document.getElementById("newcodigo").value;
 
-
-
-
-    if(libros[i].titulo == ""){
-        Swal.fire('No ha ingresado el titulo')
-        
-    }else{
-        if(libros[i].descripcion ==""){
-            Swal.fire('No ha ingresado ninguna descripción')
-            
-        }else{
-            if(libros[i].precio ==""){
-                Swal.fire('No ha ingresado el precio')
-                
-        
-            }else{
-                if(libros[i].categoria ==""){
-                    Swal.fire('No ha ingresado la categoria')
-                    
-            
-                }else{
-                    if(libros[i].imagen ==""){
-                         Swal.fire("No ha ingresado el url")
-                
-                    }else{
-                        if(libros[i].stock ==""){
-                            Swal.fire("No ha ingresado el stock disponible")
-
-                        }else{
-                            if(libros[i].codigo ==""){
-                                Swal.fire("No ha ingresado el código")
-            
-            
-            
-            
-            
-            
-            }else{
+  if (libros[i].titulo == "") {
+    Swal.fire("No ha ingresado el titulo");
+  } else {
+    if (libros[i].descripcion == "") {
+      Swal.fire("No ha ingresado ninguna descripción");
+    } else {
+      if (libros[i].precio == "") {
+        Swal.fire("No ha ingresado el precio");
+      } else {
+        if (libros[i].categoria == "") {
+          Swal.fire("No ha ingresado la categoria");
+        } else {
+          if (libros[i].imagen == "") {
+            Swal.fire("No ha ingresado el url");
+          } else {
+            if (libros[i].stock == "") {
+              Swal.fire("No ha ingresado el stock disponible");
+            } else {
+              if (libros[i].codigo == "") {
+                Swal.fire("No ha ingresado el código");
+              } else {
                 localStorage.setItem("Libros", JSON.stringify(libros));
                 vistaPrincipal();
+              }
             }
-            }
+          }
         }
-        }
-        }
+      }
     }
-    }
-    
-
+  }
 }
 
-
 //funcion eliminar
-function eliminar(titulo){
-    let libros = JSON.parse(localStorage.getItem("Libros"));
-    for(let i=0; i<libros.length; i++) {
-        if(libros[i].titulo === titulo){
-            libros.splice(i, 1);
-        }
+function eliminar(titulo) {
+  let libros = JSON.parse(localStorage.getItem("Libros"));
+  for (let i = 0; i < libros.length; i++) {
+    if (libros[i].titulo === titulo) {
+      libros.splice(i, 1);
     }
- localStorage.setItem("Libros", JSON.stringify(libros));
- leer();
+  }
+  localStorage.setItem("Libros", JSON.stringify(libros));
+  leer();
 }
 
 //función para mostrar la interfaz principal
 
-function vistaPrincipal(){
-    document.getElementById("body").innerHTML = `<div class="row">
+function vistaPrincipal() {
+  document.getElementById("body").innerHTML = `<div class="row">
     <div class="col-12">
         <div class="card"> </div>
             <div class="card-header">
@@ -346,74 +325,60 @@ function vistaPrincipal(){
           </section>
     </div>
 
-</div> `
-leer();
-
+</div> `;
+  leer();
 }
 
-
 leer();
-
 
 //VALIDACIONES
 
-function cantidadCaracteresTitulo(input){
-    if( input.value.trim().length >= 3 && input.value.trim().length <=40 ){
-        console.log('dato valido');
-        input.className = 'form-control is-valid';
-        return true;
-    }else{
-        console.log('dato invalido');
-        input.className = 'form-control is-invalid';
-        return false;
-    }
+function cantidadCaracteresTitulo(input) {
+  if (input.value.trim().length >= 3 && input.value.trim().length <= 40) {
+    console.log("dato valido");
+    input.className = "form-control is-valid";
+    return true;
+  } else {
+    console.log("dato invalido");
+    input.className = "form-control is-invalid";
+    return false;
+  }
 }
 
-
-function cantidadCaracteresCodigo(input){
-    if( input.value.trim().length >= 1 && input.value.trim().length <=50 ){
-        console.log('dato valido');
-        input.className = 'form-control is-valid';
-        return true;
-    }else{
-        console.log('dato invalido');
-        input.className = 'form-control is-invalid';
-        return false;
-    }
+function cantidadCaracteresCodigo(input) {
+  if (input.value.trim().length >= 1 && input.value.trim().length <= 50) {
+    console.log("dato valido");
+    input.className = "form-control is-valid";
+    return true;
+  } else {
+    console.log("dato invalido");
+    input.className = "form-control is-invalid";
+    return false;
+  }
 }
 
-
-function cantidadCaracteresDescripcion(input){
-    if( input.value.trim().length >= 3 && input.value.trim().length <=300 ){
-        console.log('dato valido');
-        input.className = 'form-control is-valid';
-        return true;
-    }else{
-        console.log('dato valido');
-        input.className = 'form-control is-invalid';
-        return false;
-    }
+function cantidadCaracteresDescripcion(input) {
+  if (input.value.trim().length >= 3 && input.value.trim().length <= 300) {
+    console.log("dato valido");
+    input.className = "form-control is-valid";
+    return true;
+  } else {
+    console.log("dato valido");
+    input.className = "form-control is-invalid";
+    return false;
+  }
 }
 
-function validarImagen(input){
-    let expReg = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;;
-    if(expReg.test(input.value)){
-        console.log('dato valido');
-        input.className = 'form-control is-valid';
-        return true;
-    }else{
-        console.log('dato valido');
-        input.className = 'form-control is-invalid';
-        return false;
-    }
+function validarImagen(input) {
+  let expReg =
+    /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+  if (expReg.test(input.value)) {
+    console.log("dato valido");
+    input.className = "form-control is-valid";
+    return true;
+  } else {
+    console.log("dato valido");
+    input.className = "form-control is-invalid";
+    return false;
+  }
 }
-
-
-
-
-
-
-
-
-
-
