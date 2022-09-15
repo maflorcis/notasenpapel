@@ -1,162 +1,173 @@
-@import url('https://fonts.googleapis.com/css2?family=Amita:wght@700&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Amita:wght@700&display=swap");
 
 /* CONFIGURACIÓN GENERAL DE NAVBAR */
-#NavbarTitle{
-    font-family: 'Amita', cursive;
+#NavbarTitle {
+  font-family: "Amita", cursive;
 }
 
-
-#colorHeader{
-    background-color: #260F01;
+#colorHeader {
+  background-color: #260f01;
 }
 
-@media all and (max-width: 767px){
-    .bannerNotasenPapel{
-        height: 250px;
-        object-fit: cover;
-    }
+@media all and (max-width: 767px) {
+  .bannerNotasenPapel {
+    height: 250px;
+    object-fit: cover;
+  }
 }
 
 /* FIN NAVBAR */
 
-
 /* ADMINISTRADOR*/
 
-
-.Adm-title{
-    background-color : #f2dcc2ab;
+.Adm-title {
+  background-color: #f2dcc2ab;
 }
-
 
 /* FIN ADM */
 
 /* DATOS PARA INDEX - CARRITO */
 
 .borrar-parti {
-    background-color: red;
-    border-radius: 50%;
-    padding: 5px 10px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+  background-color: red;
+  border-radius: 50%;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 
 /* ACERCA DE NOSOTROS */
 
-.acercadeNosBody{
-    background-color : grey;
-    background-image : url('../img/pexels-ylanite-koppens-934067.jpg');
-    background-size: 150%;
+.acercadeNosBody {
+  background-color: grey;
+  background-image: url("../img/pexels-ylanite-koppens-934067.jpg");
+  background-size: 150%;
 }
 
 .About-us {
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    background-color : #f2dcc2ab;
-  }
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: #f2dcc2ab;
+}
 
-  .About-us2{
-    background-color: beige;
-  }
+.About-us2 {
+  background-color: beige;
+}
 
-  #acercaH1{
-    color: black;
-    font-size: 35px;
-    background-color : #f2dcc2ab;
-  }
-  #team {
-    border-radius: 50%;
-  }
-  
-  p {
-    font-size: 18px;
-  } 
- 
+#acercaH1 {
+  color: black;
+  font-size: 35px;
+  background-color: #f2dcc2ab;
+}
+#team {
+  border-radius: 50%;
+}
+
+p {
+  font-size: 18px;
+}
+
+/* FIN DE ACERCA DE NOSOTROS */
+
+/* LOGIN */
+.loginBody {
+  background-image: url("../img/pexels-ylanite-koppens-934067.jpg");
+  background-size: 150%;
+}
+
+.loginForm {
+  background-color: #f2dcc2ab;
+}
+
+.titleLogin {
+  background-color: #f2dcc2ab;
+}
+
+.fraseM {
+  background-color: #f2dcc2ab;
+}
+
+.form-login {
+  background-color: #f2dcc2ab;
+}
+
+.no-tenescuenta {
+  background-color: #f2dcc2ab;
+}
+
+/* FIN DE LOGIN */
+
+/* REGISTRO */
+.bodyRegistro {
+  background-color: grey;
+  background-image: url("../img/pexels-ylanite-koppens-934067.jpg");
+  background-size: 150%;
+}
+
+.form-registro {
+  background-color: #f2dcc2ab;
+}
+
+#formularioRegistro {
+  background-color: #f2dcc2ab;
+}
+
+.titleRegistro {
+  background-color: #f2dcc2ab;
+}
+
+/* FIN DE REGISTRO */
+
+/* CARRITO */
+
+.botonC {
+  border: 1px solid #2e518b; /*anchura, estilo y color borde*/
+  padding: 5px; /*espacio alrededor texto*/
+  background-color: #2e518b; /*color botón*/
+  color: #ffffff; /*color texto*/
+  text-decoration: none; /*decoración texto*/
+  font-family: "Helvetica", sans-serif; /*tipografía texto*/
+  border-radius: 20px; /*bordes redondos*/
+  font-size: 5 px;
+}
+
+.botoncb {
+  border: 1px solid #2e518b; /*anchura, estilo y color borde*/
+  padding: 5px; /*espacio alrededor texto*/
+  background-color: #2e518b; /*color botón*/
+  color: #ffffff; /*color texto*/
+  text-decoration: none; /*decoración texto*/
+  font-family: "Helvetica", sans-serif; /*tipografía texto*/
+  border-radius: 20px; /*bordes redondos*/
+  font-size: 5 px;
+}
+
+.carritoTitle{
+    background-color: #f2dcc2ab;
+}
+
+/* FIN DE CARRITO */
+
+/* FIN DE BUSCADOR */
+.buscador {
+  background-color: rgba(114, 114, 188, 0.629);
+}
+
+/* FIN DE BUSCADOR */
 
 
-  /* FIN DE ACERCA DE NOSOTROS */
-  
-
-   /* LOGIN */
-   .loginBody{
-    
-    background-image : url('../img/pexels-ylanite-koppens-934067.jpg');
+/* PAGINA DETALLE */
+.detalleBody {
+    background-color: grey;
+    background-image: url("../img/pexels-ylanite-koppens-934067.jpg");
     background-size: 150%;
-    
-}
+  }
 
-    .loginForm{
-        background-color : #f2dcc2ab;
-    }
+  .tituloDetalle{
+    background-color: #f2dcc2ab;
+  }
 
-    .titleLogin{
-        background-color : #f2dcc2ab;
-    }
-    
-
- .fraseM{
-    background-color : #f2dcc2ab;
- }
-
-    /* FIN DE LOGIN */
-
-
-
-       /* REGISTRO */
-   .bodyRegistro{
-    background-color : grey;
-    background-image : url('../img/pexels-ylanite-koppens-934067.jpg');
-    background-size: 150%;
-    
-}
-
-#formularioRegistro{
-    background-color : #f2dcc2ab;
-}
- 
-    .titleRegistro{
-        background-color : #f2dcc2ab;
-    }
-    
-
-    /* FIN DE REGISTRO */
-
-
-       /* BOTONES DEL CARRITO */
-
-     .botonC {
-            border: 1px solid #2e518b; /*anchura, estilo y color borde*/
-            padding: 5px; /*espacio alrededor texto*/
-            background-color: #2e518b; /*color botón*/
-            color: #ffffff; /*color texto*/
-            text-decoration: none; /*decoración texto*/
-            font-family: 'Helvetica', sans-serif; /*tipografía texto*/
-            border-radius: 20px; /*bordes redondos*/
-            font-size: 5 px;
-            }
-
-            .botoncb {
-                border: 1px solid #2e518b; /*anchura, estilo y color borde*/
-                padding: 5px; /*espacio alrededor texto*/
-                background-color: #2e518b; /*color botón*/
-                color: #ffffff; /*color texto*/
-                text-decoration: none; /*decoración texto*/
-                font-family: 'Helvetica', sans-serif; /*tipografía texto*/
-                border-radius: 20px; /*bordes redondos*/
-                font-size: 5 px;
-                }
-
-        
-    
-     /* FIN DE BOTON */
-
-     /* FIN DE BUSCADOR */
-     .buscador{
-        background-color : rgba(114, 114, 188, 0.629);
-    }
-
-          /* FIN DE BUSCADOR */
+/* FIN PÁGINA DETALLE */

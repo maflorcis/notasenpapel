@@ -73,17 +73,17 @@
 
 
 <!-- login visitante user form -->
-<div class="container">
-    <h2>Login Form</h2>
+<div class="container form-login">
+    <h2 class="text-center text-light">Ingresa tus datos para iniciar sesión</h2>
     <form action="#">
   
       <div class="form-group" autocomplete="off">
-        <label for="email">Email:</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" class="form-control" id="email" placeholder="ingresa tu dirección de email" name="email">
       </div autocomplete="off">
       <div class="form-group" autocomplete="off">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="psw" placeholder="Enter password" name="pwd" autocomplete="off">
+        <label for="pwd">Contraseña:</label>
+        <input type="password" class="form-control" id="psw" placeholder="Ingresá tu password" name="pwd" autocomplete="off">
       </div>
      
       <button type="button" onclick="saveData()" id="save_btn" class="btn btn-default">Submit</button>
@@ -92,7 +92,7 @@
   
   
   <section>
-    <h3>No tenés cuenta</h3>
+    <h5 class="text-center no-tenescuenta">¿No tenés cuenta?</h5>
     <p class="text-center bg-light text-dark"><a href="./registroVisitante.html">Registrate</a></p>
   
   </section>
