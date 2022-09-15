@@ -135,7 +135,7 @@ function editar(titulo) {
 
                           <div class="form-group">
                               <label for="imagen">Imagen</label>
-                              <input class= "form-control" type="text"  id="newimagen" placeholder="${libros[i].imagen}"maxlength="50"
+                              <input class= "form-control" type="text"  id="newimagen" placeholder="${libros[i].imagen}"maxlength="250"
                               minlength="3" class="form-control" required>
                               <div class="valid-feedback">Correcto</div>
                               <div class="invalid-feedback">Incorrecto</div>
